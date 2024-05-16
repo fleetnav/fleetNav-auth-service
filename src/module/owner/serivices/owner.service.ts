@@ -1,10 +1,10 @@
 import { BadRequestException, HttpException, HttpStatus, Injectable, NotFoundException } from '@nestjs/common';
-import { CreateOwnerDto } from './dto/create-owner.dto';
+import { CreateOwnerDto } from '../dto/create-owner.dto';
 import {hash} from 'bcrypt';
-import { UpdateOwnerDto } from './dto/update-owner.dto';
+import { UpdateOwnerDto } from '../dto/update-owner.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import mongoose, { Model } from 'mongoose';
-import { Owner } from './entities/owner.entity';
+import { Owner } from '../entities/owner.entity';
 
 @Injectable()
 export class OwnerService {
