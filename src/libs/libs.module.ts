@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { PersistanceModule } from './persistance/persistance.module';
 import { AuthModule } from './auth/auth.module';
+import { PersistenceModule } from './persistence';
 
 @Module({
-  imports: [PersistanceModule, AuthModule]
+  imports: [PersistenceModule, AuthModule]
 })
 export class LibsModule {}
