@@ -1,9 +1,9 @@
 import { BadRequestException, HttpException, HttpStatus, Injectable, NotFoundException } from '@nestjs/common';
-import { CreateDriverDto } from './dto/create-driver.dto';
-import { UpdateDriverDto } from './dto/update-driver.dto';
+import { CreateDriverDto } from '../dto/create.driver.dto';
+import { UpdateDriverDto } from '../dto/update-driver.dto';
 import {hash} from 'bcrypt';
 import { InjectModel } from '@nestjs/mongoose';
-import { Driver } from './entities/driver.entity';
+import { Driver } from '../entities/driver.entity';
 import mongoose, { Model } from 'mongoose';
 
 @Injectable()
