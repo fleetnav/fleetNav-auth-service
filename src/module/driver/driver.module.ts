@@ -1,9 +1,17 @@
 import { Module } from '@nestjs/common';
-import { ControllersController } from './controllers/controllers.controller';
-import { ServicesService } from './services/services.service';
+import { DriverService } from './services/driver.service';
+import { DriverController } from './controllers/driver.controller';
+import { MongooseModule } from '@nestjs/mongoose';
+import { Driver, DriverSchema } from './entities/driver.entity';
 
 @Module({
-  controllers: [ControllersController],
-  providers: [ServicesService]
+  imports: [
+    MongooseModule.forFeature([
+      { name: Driver.name, 
+        schema: DriverSchema }]),
+  ],
+  controllers: [DriverController],
+  providers: [DriverService],
+  exports: [DriverService],
 })
 export class DriverModule {}
