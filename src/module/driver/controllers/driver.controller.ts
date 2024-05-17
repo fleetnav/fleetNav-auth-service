@@ -24,11 +24,11 @@ export class DriverController {
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateDriverDto: UpdateDriverDto) {
-    return this.driverService.update(+id, updateDriverDto);
+    return this.driverService.update(id, updateDriverDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.driverService.remove(+id);
+    return this.driverService.remove(id);
   }
 }

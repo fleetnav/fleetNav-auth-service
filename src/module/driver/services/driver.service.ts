@@ -68,7 +68,7 @@ export class DriverService {
   
   }
 
-  async update(id: number, updateDriverDto: UpdateDriverDto) {
+  async update(id: string, updateDriverDto: UpdateDriverDto) {
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
       throw new BadRequestException('Invalid ID format');
@@ -84,7 +84,7 @@ export class DriverService {
 
   }
 
-  async remove(id: number) {
+  async remove(id: string) {
     
     if (!mongoose.Types.ObjectId.isValid(id)) {
       throw new BadRequestException('Invalid ID format');

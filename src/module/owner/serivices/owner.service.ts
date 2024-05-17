@@ -72,7 +72,7 @@ export class OwnerService {
   
   }
 
-  async update(id: number, updateOwnerDto: UpdateOwnerDto) {
+  async update(id: string, updateOwnerDto: UpdateOwnerDto) {
     
     if (!mongoose.Types.ObjectId.isValid(id)) {
       throw new BadRequestException('Invalid ID format');
@@ -88,7 +88,7 @@ export class OwnerService {
     
   }
 
-  async remove(id: number) {
+  async remove(id: string) {
     
     if (!mongoose.Types.ObjectId.isValid(id)) {
       throw new BadRequestException('Invalid ID format');

@@ -25,11 +25,11 @@ export class OwnerController {
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateOwnerDto: UpdateOwnerDto) {
-    return this.ownerService.update(+id, updateOwnerDto);
+    return this.ownerService.update(id, updateOwnerDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.ownerService.remove(+id);
+    return this.ownerService.remove(id);
   }
 }
