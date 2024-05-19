@@ -48,4 +48,9 @@ export class CreateDriverDto {
   @IsString()
   role: string;
 
+  @ApiProperty()
+  @IsOptional()
+  @IsNumber()
+  avatarNumber: number;
+
 }

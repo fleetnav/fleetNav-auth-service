@@ -25,6 +25,14 @@ export class Owner extends Document {
   @Prop({ required: true })
   number_buses: number;
 
+  @ApiProperty()
+  @Prop({ required: true })
+  role: string;
+
+  @ApiProperty()
+  @Prop({ required: true, default: 1 })
+  avatarNumber: number;
+
 }
 
 export const OwnerSchema = SchemaFactory.createForClass(Owner);

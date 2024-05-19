@@ -33,4 +33,9 @@ export class CreateOwnerDto {
   @IsString()
   role: string;
 
+  @ApiProperty()
+  @IsOptional()
+  @IsNumber()
+  avatarNumber: number;
+
 }

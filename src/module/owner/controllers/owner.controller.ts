@@ -23,6 +23,11 @@ export class OwnerController {
     return this.ownerService.findOne(id);
   }
 
+  @Get('drivers/:ownerId') 
+  findByOwnerId(@Param('ownerId') ownerId: string) {
+    return this.ownerService.findByOwnerId(ownerId)
+  }
+
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateOwnerDto: UpdateOwnerDto) {
     return this.ownerService.update(id, updateOwnerDto);
