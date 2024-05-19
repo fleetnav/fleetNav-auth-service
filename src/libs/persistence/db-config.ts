@@ -8,7 +8,7 @@ export default registerAs('dbConfig', () => {
       name: process.env.DB_NAME,
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
-      cloudHost: process.env.DB_HOST_CLOUD
+      cloudHost: process.env.DB_HOST_CLOUD,
     },
     env: process.env.NODE_ENV || 'local',
   };

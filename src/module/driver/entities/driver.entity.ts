@@ -4,7 +4,6 @@ import { ApiProperty } from '@nestjs/swagger';
 
 @Schema({ timestamps: true })
 export class Driver extends Document {
- 
   @ApiProperty()
   @Prop({ required: true })
   name: string;
@@ -32,7 +31,6 @@ export class Driver extends Document {
   @ApiProperty()
   @Prop({ required: true })
   id_owner: string;
-  
 }
 
 export const DriverSchema = SchemaFactory.createForClass(Driver);

@@ -9,7 +9,7 @@ import dbConfig from './db-config';
     MongooseModule.forRootAsync({
       useFactory: (configService: ConfigType<typeof dbConfig>) => {
         const { db, env } = configService;
-             
+
         const uriDb =
           env === 'local'
             ? `${db.connection}${db.host}/${db.name}`
@@ -23,4 +23,3 @@ import dbConfig from './db-config';
   ],
 })
 export class PersistenceModule {}
-

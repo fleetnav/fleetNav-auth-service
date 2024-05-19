@@ -7,17 +7,17 @@ import { AuthModule } from './libs/auth/auth.module';
 import dbConfig from './libs/persistence/db-config';
 
 @Module({
-  imports: [ConfigModule.forRoot({
-    envFilePath: '.env',
-    load: [dbConfig],
-    isGlobal: true,
-  }),
+  imports: [
+    ConfigModule.forRoot({
+      envFilePath: '.env',
+      load: [dbConfig],
+      isGlobal: true,
+    }),
     PersistenceModule,
     DriverModule,
     OwnerModule,
-    AuthModule, 
+    AuthModule,
   ],
   providers: [AuthModule],
 })
-
 export class AppModule {}

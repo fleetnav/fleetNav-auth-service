@@ -6,9 +6,7 @@ import { Owner, OwnerSchema } from './entities/owner.entity';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([
-      { name: Owner.name, 
-        schema: OwnerSchema }]),
+    MongooseModule.forFeature([{ name: Owner.name, schema: OwnerSchema }]),
   ],
   controllers: [OwnerController],
   providers: [OwnerService],

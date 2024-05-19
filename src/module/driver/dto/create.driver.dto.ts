@@ -1,8 +1,13 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsEmail, IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
+import {
+  IsEmail,
+  IsNotEmpty,
+  IsNumber,
+  IsOptional,
+  IsString,
+} from 'class-validator';
 
 export class CreateDriverDto {
-
   @ApiProperty()
   @IsNotEmpty()
   @IsString()
@@ -47,5 +52,4 @@ export class CreateDriverDto {
   @IsOptional()
   @IsString()
   role: string;
-
 }

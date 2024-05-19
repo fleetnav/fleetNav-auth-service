@@ -4,7 +4,6 @@ import { ApiProperty } from '@nestjs/swagger';
 
 @Schema({ timestamps: true })
 export class Owner extends Document {
- 
   @ApiProperty()
   @Prop({ required: true })
   name: string;
@@ -24,7 +23,6 @@ export class Owner extends Document {
   @ApiProperty()
   @Prop({ required: true })
   number_buses: number;
-
 }
 
 export const OwnerSchema = SchemaFactory.createForClass(Owner);
