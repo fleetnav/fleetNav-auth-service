@@ -11,10 +11,14 @@ import { UpdateOwnerDto } from '../dto/update-owner.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import mongoose, { Model } from 'mongoose';
 import { Owner } from '../entities/owner.entity';
+import { Driver } from 'src/module/driver/entities/driver.entity';
 
 @Injectable()
 export class OwnerService {
-  constructor(@InjectModel(Owner.name) private ownerModel: Model<Owner>) {}
+  constructor(
+    @InjectModel(Owner.name) private ownerModel: Model<Owner>,
+    @InjectModel(Driver.name) private driverModel: Model<Driver>,
+  ) {}
 
   async create(createOwnerDto: CreateOwnerDto) {
     const { password, email } = createOwnerDto;
@@ -57,6 +61,16 @@ export class OwnerService {
     }
 
     return owner;
+  }
+
+  async findByOwnerId(ownerId: string) {
+    const drivers = await this.driverModel.find({ id_owner: ownerId }).exec();
+
+    if (drivers.length >= 0) {
+      throw new NotFoundException(`Drivers dont exist`);
+    }
+
+    return drivers;
   }
 
   async findOneByEmail(email: string): Promise<Owner> {

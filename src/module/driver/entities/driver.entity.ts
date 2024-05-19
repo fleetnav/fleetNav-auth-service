@@ -31,6 +31,14 @@ export class Driver extends Document {
   @ApiProperty()
   @Prop({ required: true })
   id_owner: string;
+
+  @ApiProperty()
+  @Prop({ required: true })
+  role: string;
+
+  @ApiProperty()
+  @Prop({ required: true, default: 1 })
+  avatarNumber: number;
 }
 
 export const DriverSchema = SchemaFactory.createForClass(Driver);
