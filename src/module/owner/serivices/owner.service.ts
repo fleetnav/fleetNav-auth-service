@@ -66,7 +66,7 @@ export class OwnerService {
   async findByOwnerId(ownerId: string) {
     const drivers = await this.driverModel.find({ id_owner: ownerId }).exec();
 
-    if (drivers.length >= 0) {
+    if (drivers.length <= 0) {
       throw new NotFoundException(`Drivers dont exist`);
     }
 

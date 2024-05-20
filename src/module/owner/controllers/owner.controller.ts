@@ -30,9 +30,9 @@ export class OwnerController {
     return this.ownerService.findOne(id);
   }
 
-  @Get('drivers/:ownerId') 
+  @Get('drivers/:ownerId')
   findByOwnerId(@Param('ownerId') ownerId: string) {
-    return this.ownerService.findByOwnerId(ownerId)
+    return this.ownerService.findByOwnerId(ownerId);
   }
 
   @Patch(':id')
