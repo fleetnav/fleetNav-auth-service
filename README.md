@@ -1,23 +1,35 @@
 
 # **FleetNav API**
 
-The Bus Management API is a backend application designed to manage the administration of buses, drivers, and routes. This API allows owners and drivers to register, log in, and perform basic CRUD operations to access relevant information.
+The Bus Management API is a backend application designed to manage the administration of buses, drivers, and routes. This API allows owners and drivers to register, log in, and perform basic CRUD operations to access relevant information. The authentication service is crucial to ensure that only authorized users have access to the data and functionalities of the FleetNav system. Implementing robust authentication helps protect sensitive information and maintain the integrity of the system.
+
 
 ## Content Table
 
-* Characteristics.
+* What for?.
+* For whom?
 * Local Configuration.
 * Running the App.
 * Queries in Postman.
-* Gitflow Branching Strategy
-* License
+* Gitflow Branching Strategy.
+* Participants.
+* License.
 
 
-## Characteristics
+## What for?
 
 * **User Authentication:** Manages access through a robust JWT authentication system.
 * **Data Validation:** Ensures data integrity with comprehensive validations on all inputs.
 * **Role Management:** Controls access to different parts of the API based on user roles (owner, driver).
+
+
+## For whom?
+
+This service is aimed at:
+
+1. **Fleet Owners:** Who need to securely manage their fleet of buses, drivers, and routes.
+2. **Drivers:** Who need access to their personal and route information, ensuring that only they can view and modify their data.
+3. **Developers:** Who work on extending or maintaining the FleetNav system and need to integrate or improve the authentication system.
 
 
 ## Local Configuration
@@ -89,6 +101,14 @@ This project follows the Gitflow strategy, a robust model for software developme
 The work is integrated into the 'dev' branch for integration testing. Once 'dev' is stable and ready to be released, it is merged into 'main'.
 
 If you want to contribute to the project, create a new branch from 'dev' using the appropriate prefix (feature/CU-TaskId). After finishing your work and testing, open a Pull Request towards 'dev'.
+
+
+## Participants
+
+The participants involved in the execution process of the FleetNav project were:
+
+* Julian Roman
+* Camila Sepulveda
 
 
 ## License
