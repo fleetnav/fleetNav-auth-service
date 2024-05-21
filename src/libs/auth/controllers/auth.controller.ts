@@ -9,31 +9,31 @@ import { Role } from '../../decorators/roles/role.enum';
 import { IsPublic } from '../../decorators/public.decorator';
 
 @Controller('auth')
-@UseGuards(AtGuard)
+// @UseGuards(AtGuard)
 export class AuthController {
     
   constructor(private readonly authService: AuthService) {}
 
   @Post('register/driver')
-  @Roles(Role.Driver)
+  // @Roles(Role.Driver)
   registerDriver(@Body() createDriverDto: CreateDriverDto) {
     return this.authService.registerDriver(createDriverDto);
   }
 
   @Post('register/owner')
-  @Roles(Role.Owner)
+  // @Roles(Role.Owner)
   registerOwner(@Body() createOwnerDto: CreateOwnerDto) {
     return this.authService.registerOwner(createOwnerDto);
   }
 
   @Post('login/driver')
-  @IsPublic() // Ruta pública
+  // @IsPublic() // Ruta pública
   loginDriver(@Body() loginDriverDto: LoginAuthDto) {
     return this.authService.loginDriver(loginDriverDto);
   }
 
   @Post('login/owner')
-  @IsPublic() // Ruta pública
+  // @IsPublic() // Ruta pública
   loginOwner(@Body() loginOwnerDto: LoginAuthDto) {
     return this.authService.loginOwner(loginOwnerDto);
   }
