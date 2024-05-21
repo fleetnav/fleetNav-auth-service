@@ -2,6 +2,13 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import { ApiProperty } from '@nestjs/swagger';
 
+
+export enum Role {
+  Owner = 'owner',
+  Driver = 'driver',
+}
+
+
 @Schema({ timestamps: true })
 export class Driver extends Document {
  

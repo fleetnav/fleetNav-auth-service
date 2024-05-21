@@ -71,6 +71,16 @@ To run the project locally, clone the repository and set up the necessary enviro
 
 These steps will allow you to execute the project. Additionally, you must develop the environment variables according to your needs.
 
+
+## Auth
+
+- JWT secret generator command
+
+```bash
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+```
+
+
 ## Running the App
 
 ```bash
