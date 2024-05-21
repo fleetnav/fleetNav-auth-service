@@ -1,6 +1,6 @@
 import { HttpException, Injectable } from '@nestjs/common';
 import { LoginAuthDto } from '../dto';
-import { compare } from 'bcrypt';
+import { compare } from 'bcryptjs';
 import { JwtService } from '@nestjs/jwt';
 import { DriverService } from 'src/module/driver/services/driver.service';
 import { OwnerService } from 'src/module/owner/serivices/owner.service';
@@ -17,12 +17,25 @@ export class AuthService {
 
   async registerDriver(registerDriverDto: CreateDriverDto) {
     const driverCreated = await this.driverService.create(registerDriverDto);
-    return driverCreated;
+    const payload = {
+      id: driverCreated._id,
+      email: driverCreated.email,
+      role: driverCreated.role,
+    };
+
+    const token = await this.jwtService.sign(payload);
+
+    return { user: driverCreated, token };
   }
 
   async registerOwner(registerOwnerDto: CreateOwnerDto) {
     const ownerCreated = await this.ownerService.create(registerOwnerDto);
-    const payload = { id: ownerCreated._id, email: ownerCreated.email };
+
+    const payload = {
+      id: ownerCreated._id,
+      email: ownerCreated.email,
+      role: ownerCreated.role,
+    };
 
     const token = await this.jwtService.sign(payload);
 

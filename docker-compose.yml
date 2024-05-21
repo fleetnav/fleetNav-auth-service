@@ -1,0 +1,6 @@
+services:
+  auth-service:
+    image: ralexale/fleetnav-auth-service:0.0.1
+    restart: always
+    ports:
+      - 8086:8086

@@ -6,7 +6,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { CreateOwnerDto } from '../dto/create-owner.dto';
-import { hash } from 'bcrypt';
+import { hash } from 'bcryptjs';
 import { UpdateOwnerDto } from '../dto/update-owner.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import mongoose, { Model } from 'mongoose';
