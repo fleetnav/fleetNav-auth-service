@@ -58,7 +58,7 @@ export class AuthService {
 
     if (!checkPassword) throw new HttpException('PASSWORD INVALID', 403);
 
-    const payload = { id: user._id, email: user.email };
+    const payload = { id: user._id, email: user.email, role: user.role };
 
     const token = await this.jwtService.sign(payload);
 
