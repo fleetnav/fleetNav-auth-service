@@ -3,10 +3,6 @@ import { LoginAuthDto } from '../dto';
 import { AuthService } from '../services/auth.service';
 import { CreateDriverDto } from 'src/module/driver/dto';
 import { CreateOwnerDto } from 'src/module/owner/dto';
-import { AtGuard } from '../guard/auth.guard';
-import { Roles } from '../../decorators/roles/roles.decorators';
-import { Role } from '../../decorators/roles/role.enum';
-import { IsPublic } from '../../decorators/public.decorator';
 
 @Controller('auth')
 // @UseGuards(AtGuard)

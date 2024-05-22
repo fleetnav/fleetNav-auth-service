@@ -47,8 +47,12 @@ export class AtGuard extends AuthGuard('jwt') {
     const user = request.user;
 
     if (!requiredRoles.some((role) => user.roles?.includes(role))) {
-      this.logger.warn(`User with roles ${user.roles} attempted to access restricted route`);
-      throw new UnauthorizedException('Access Denied: Insufficient permissions');
+      this.logger.warn(
+        `User with roles ${user.roles} attempted to access restricted route`,
+      );
+      throw new UnauthorizedException(
+        'Access Denied: Insufficient permissions',
+      );
     }
 
     return true;
